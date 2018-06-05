@@ -1,0 +1,105 @@
+
+
+
+        -----------------------------------------------------
+        - Java   
+        -----------------------------------------------------
+        Level-1
+            - syntax (  OO + FP)
+            - data-structures ==> collections
+            - concurreny ==> mult-threading
+        -----------------------------------------------------
+        Level-2
+            - IO
+            - JDBC API
+            - basic Networking API
+            .......
+        -----------------------------------------------------
+        Level-3 :
+            - server-side java to dev web-based appln
+
+                - servlet & JSP
+        ------------------------------------------------------        
+        Level-4 :
+
+            - Spring Framework
+
+                - core
+                - web
+                - ........
+
+        ------------------------------------------------------        
+        - JavaScript   
+        -----------------------------------------------------
+        
+        Level-5 :
+            - HTML , CSS ( intro )
+            - JavaScript
+                - syntax ==> FP + OOP
+                - data-structures 
+                - concurrency
+
+        ------------------------------------------------------
+        Level-6 :
+            - New Angular -v5 
+        ------------------------------------------------------
+        Java-lanagugae
+            -> can develope any type s/w application
+
+        Features
+
+            -> wide eco system
+            -> simple to use by OO + FP concepts
+
+            -> platform-independent ( can run any-where )
+            -> concurrent based appln.
+
+        ------------------------------------------------------    
+        How to run Java-program ?
+
+          step-1 : compile-it  ==> produces java-binary-code
+          step-2 : run on JRE  ==> run as process in any OS
+
+        -------------------------------------------------------   
+
+        java-community ?
+
+         ==> java-community  leading by Oracle
+
+        -------------------------------------------------------
+
+        Java-language : style of application developement
+
+        style => component + container
+
+        component ==> appl business-logic unit
+        container ==> infra-structure provider on JRE
+
+        java-appln  ==> component(s) + container
+
+
+        -------------------------------------------------------
+
+        1. Java SE ( standard-edition)
+
+            a. application              : client-JRE
+            b. applet                   : browser-with-JRE ( closed )
+
+        2. Java EE ( enterprise-edition )    
+
+            a. servlet & jsp ( web components) : web-container ( e.g Tomcat,Jetty,...)
+            b. EJB ( enterprise java bean )    : ejb-container    ( not widly used , due to spring framework boom)
+
+               web-container + ejb-container ==> Application-server
+
+               Application-server e.g jboss,web-sphere,weblogic,glassfish,...
+
+        -----------------------------------------------------------    
+        1. Java SE
+            - stand-alone java-application
+            - n/w ing application
+        2. Java EE
+            - web-application appln
+            - enterprise-application appln    
+        ----------------------------------------------------------
+
