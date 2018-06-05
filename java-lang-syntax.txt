@@ -112,7 +112,7 @@ syntax:
 
 
 -----------------------------------------------------------
-4. OO introduction
+ OO introduction
 -----------------------------------------------------------
 
 what is object ?
@@ -151,3 +151,171 @@ OO concepts
                i.e object can be closed for modification & open for extension
 
 ------------------------------------------------------------------------
+
+
+
+-----------------------------------------------------------
+ Type : class-syntax 
+-----------------------------------------------------------
+
+
+_____   _________ class Name [extends] Super-Type 
+[public][abstract]           [implements] I1,I2,..{
+[      ][final]     // state-definition  ==> variables
+        [strictfp]  // constructor(s)
+                    // behavior(s)
+                    // inner-blocks ( static | instance)
+                    // inner-types
+________________
+[public] [static]
+[private]
+[protected]
+[       ]
+                }
+------------------------------------------------------------
+
+
+-----------------------------------------------------------
+ Type : interface-syntax 
+-----------------------------------------------------------
+
+
+==> to abstract our obj's Implementation
+
+________    interface Name [extends] I1,I2,I3,..{
+[public]    // constant-state ==> constant variables ( public & static & final )
+[      ]    // behvaior       ==> abstract-behav     ( public & abstract)
+            // inner type(s)
+
+            in java-8
+            -------------
+            default void m1(){}
+            static void m2(){}
+
+            in java-9
+            ------------
+            private void priMethod(){}
+
+           }
+
+
+-----------------------------------------------------------
+ Type : enum-syntax  ( in java 1.5 )
+-----------------------------------------------------------
+
+==> to group related constants as Type  
+
+syntax
+
+    enum Name [implemnts] I1,I2{
+        // constants ==> ( instances of this enum-type) ==> public & static
+        // constructor(s)
+        // method(s)
+    }
+           
+-----------------------------------------------------------
+ Type : annotation-syntax  ( in java 1.5 )
+-----------------------------------------------------------
+
+ ==> to describe java programming elements
+
+
+syntax:
+
+        @interface Name{
+            //properties ==> public & abstract
+        }
+
+-----------------------------------------------------------
+
+   
+-----------------------------------------------------------
+syntax:  variable(s)
+-----------------------------------------------------------
+
+
+data-types
+
+    1. simple  / primitives ==> values    i.e 8 primitives
+    2. complex / references ==> objects   ==> user defined data-types
+
+
+    e.g
+
+    class Employee{
+        static String tnrName; // class's variable
+        int id; // obj's variable
+        void m(){
+            int loc;
+        }
+    }
+
+syntax
+   ________    __________ data-type varName=[value/obj's referenc]
+   [public]    [static]
+   [private]   [final ]
+   [protected] [transient]
+   [      ]    [volatile]
+
+     local-variables
+   ------------------------
+    -Nil-       [final]    
+
+  
+
+   
+-----------------------------------------------------------
+syntax:  constructor(s)
+-----------------------------------------------------------
+in java,
+
+    => obj creations 2-steps process
+
+
+step-1 : dyanmic memory allocation   ==> 'new'
+step-2 : initialize that memory with obj's values ==> constructor
+
+
+syntax :
+
+    in any class,
+
+
+        ______     ClassName([args]){
+        [public]     // initialization logic..
+        [private]   
+        [protected]
+        [         ]
+
+                    }   
+
+-----------------------------------------------------------
+syntax:  method  ==> behavior
+-----------------------------------------------------------
+    ReturnType
+        - void
+        - primitive/reference
+
+______      ________ ReturnType methodName([args])[throws] Exception{
+[public]    [static]           // A/R/L & assignment operation
+[private]   [final]            // conditional executions
+[protected] [synchronized]     // looping executions
+[      ]    [strictfp]         // invoke other methods
+            [abstract]              [return][result]
+            [native]        }
+-----------------------------------------------------------
+
+Naming conventions
+-------------------
+
+ keywords      ==> lower-case
+ package-names ==> lower-case
+ type-names    ==> pascal-case  e.g JavaEmployee
+ field/method  ==> camel-case   e.h javaEmployee
+ constants     ==> upper-case
+
+------------------------------------------------------------ 
+
+
+
+
