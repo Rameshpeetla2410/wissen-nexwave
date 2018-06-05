@@ -1,0 +1,20 @@
+
+---------------------------------------------------------
+java environment
+---------------------------------------------------------
+    1- developement
+
+        - editor / IDE
+        - JDK ==> java-compiler + java-apis _ java-tools
+        - build-tools ==> ANT, Maven, Gradle, SBT, Ivy ,.........
+        - ...........
+
+    2- deployment
+
+        - JRE ( java runtime environment)
+
+---------------------------------------------------------             
+
+"HelloWorld"
+
+---------------------------------------------------------  

@@ -1,0 +1,153 @@
+
+
+
+syntax
+
+
+-----------------------------------------------------------
+1. java-project
+-----------------------------------------------------------
+
+
+ proj
+    |
+    |-----p1 ( .java / .class )
+    |  | 
+    |  |------p11
+    |
+    |-----p2
+    |   
+    |   
+
+------------------------------------------------------------
+
+
+
+-----------------------------------------------------------
+2. java-file
+-----------------------------------------------------------
+
+PublicType.java
+-------------------------------------------------------------
+| a. package declaration ( 1 )
+|
+| b. import statements ( n )
+|
+| c. public type ( class | interface | enum | annotation ) ( 1 )
+|
+| d. default types ( n )
+|
+|--------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------
+3. package declaration
+-----------------------------------------------------------
+    => grouping related java-files as one-module ( package )
+
+why we need package-declaration ?
+
+    => easy to maintain
+    => we can avoid type-name collisions
+
+syntax:
+
+    package root;
+            root.sub1.sub2;
+
+    general recommendation for packgae names
+
+    e.g Employee.java ==> emp ==> EM ==> wissen ==> com
+
+    syntax : c-type.c-name.p-name.m-name;
+
+    package com.wissen.em.emp;        
+
+
+
+
+-----------------------------------------------------------
+4. import statement
+-----------------------------------------------------------
+
+ ==> to refer types from differet packages
+
+ e.g project
+
+    proj
+    |
+    |
+    |---- p1 ( A.java , B.java )
+    |
+    |---- p2 ( C.java , D.java )
+    |  |
+    |  |--p21( F.java )
+    |
+    |---- p3 ( C.java , E.java )
+    |  
+    |
+    |
+
+
+    e.g
+
+        package p1;
+        import p2.C; // option-2
+        import p2.D;
+        // or
+        import p2.*;
+        import p2.p21.F;
+        import p3.E;
+        public class A{
+            B b;
+            p2.C c1; // option-1
+            C c2;
+            D d;
+            E e;
+            F f;
+        }
+
+
+
+-----------------------------------------------------------
+4. OO introduction
+-----------------------------------------------------------
+
+what is object ?
+
+       - data,info,props,attributes -> State
+       - function,method,work,oprn  -> Behavior
+       - adddress,reference,location-> Identity
+
+       i.e object  ==> SBI
+
+---------------------------------------------------------
+    class  ==> inatnace(s)
+---------------------------------------------------------        
+OO concepts
+-----------
+
+    - Abstraction / Interface
+        why we need ?
+            => easy to use/learn by dependent-object
+            => loose-coupling b/w dependent & dependency
+
+    - Encapsulation / Implementation
+        why we need ?
+            => real-functionality or Implementation
+            => hiding complex Implementation thru Abstraction
+
+    - Inheritance
+        why we need?
+            => re-using common state & Behavior
+               from genaralized-type to specialized-type objects
+
+    - polymorphism
+        - a object should react in differet way based on input-strategy
+        why we need?
+            => can make more re-usable objects
+               i.e object can be closed for modification & open for extension
+
+------------------------------------------------------------------------
