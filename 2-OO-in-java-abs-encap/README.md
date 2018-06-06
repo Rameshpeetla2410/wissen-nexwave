@@ -19,8 +19,9 @@
     many ways
     
     1. using proper access-specifiers & packages
-    2. using class & interfaces
-    3. using proper OO design patterns
+    2. using accessor methods ( set & get ) methods
+    3. using class & interfaces
+    4. using proper OO design patterns
     
     
     -------------------------------------------------------------
@@ -55,5 +56,26 @@ public      Y           Y           Y           Y          Y
         -------------------------------------------------------------
      
     
+    
+    	 using class & interfaces
+    	 
+    	 2 types of objects
+    	 
+    	  -> dependent
+    	  -> dependency
+    	  
+    	  
+    	  e.g
+    	  
+    	  		-> car   : move()
+    	  		-> Wheel : rotate()
+    	  		
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
+    	 
     
     
