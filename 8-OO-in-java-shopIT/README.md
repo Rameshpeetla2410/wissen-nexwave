@@ -1,0 +1,10 @@
+
+
+	shopIT
+	-------------
+	
+	 e.g
+	 
+	 
+	 	- Billing     : getTotalPrice(cart)
+	 	- PriceMatrix : getPrice(item)
