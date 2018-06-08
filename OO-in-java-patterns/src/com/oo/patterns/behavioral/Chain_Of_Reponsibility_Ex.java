@@ -1,4 +1,4 @@
-package com.oo.patterns.structural;
+package com.oo.patterns.behavioral;
 
 interface CurrencyDispenser {
 	int getValue();
