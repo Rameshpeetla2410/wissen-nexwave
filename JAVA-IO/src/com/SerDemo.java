@@ -12,6 +12,7 @@ public class SerDemo {
 		emp.setEmpId(10);
 		emp.setEmpName("Praveen");
 		emp.setSalary(85464);
+		emp.setInfo("Info about Employee");
 
 		try {
 

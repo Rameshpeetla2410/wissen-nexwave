@@ -2,7 +2,11 @@ package com;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable{
+/**
+ * @author nexwave
+ *
+ */
+public class Employee implements Serializable {
 	/**
 	 * 
 	 */
@@ -10,9 +14,21 @@ public class Employee implements Serializable{
 	private int empId;
 	private String empName;
 	private double salary;
-	
-	public void f1() {}
-	public void f2() {}
+	private transient String info;
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public void f1() {
+	}
+
+	public void f2() {
+	}
 
 	public int getEmpId() {
 		return empId;

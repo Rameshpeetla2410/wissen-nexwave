@@ -19,6 +19,7 @@ public class DeSerDemo {
 			System.out.println("EmpId: "+emp.getEmpId());
 			System.out.println("name: "+emp.getEmpName());
 			System.out.println("Salary: "+emp.getSalary() );
+			System.out.println("Info: "+emp.getInfo());
 			
 			
 			
