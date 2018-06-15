@@ -9,6 +9,7 @@ public class batchUpdateDemo {
 
 		try {
 
+			//
 			Connection con = DBUtils.getConnection();
 			con.setAutoCommit(false);
 			
