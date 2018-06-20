@@ -100,7 +100,37 @@
      2. service layer              ==> data processing logic
      
      
-     --------------------------------------------------------- 
+     ---------------------------------------------------------
+     
+     
+     problems with JDBC API
+     
+     -> connection management manual
+     -> SQL statements are partialy DBMS dependent 
+     -> too much  code even for data-accessing logic
+     -> too many SQL statements
+     -> association b/w entities need to be managed manually
+     -> No cache mechanism for frequent accessed data
+     -> No data-filters
+     -> No support for dynamic quries support
+     .....................
+     
+     
+     
+     soln:
+     
+     	using ORM Frameworks
+     	
+     	-> Hibernate
+     	-> Toplink
+     	-> EclipseLink
+     	-> iBatis
+     	-> JDO
+     	
+     	
+     	-> JPA ( java Persistence API )
+     	
+     	 
      
      
  					
