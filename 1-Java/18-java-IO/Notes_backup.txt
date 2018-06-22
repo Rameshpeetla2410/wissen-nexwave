@@ -1,0 +1,136 @@
+
+
+IO  ( java.io, java.nio.* )
+---------------------------
+
+
+
+ 
+  sources of input/output
+  ------------------------
+  
+  - standard input/output ( keyboard / display )
+  - file
+  - n/w sockets
+  - buffer
+  
+  
+  --------------------------------
+  
+  in Java, All IO operations are 'stream' based
+  
+  2 ways
+  
+  -> 8-bit / byte-stream
+  -> 16-bit / character-stream
+  
+ 
+  -------------------------------------
+  
+   
+  IO class(s) to do IO operations
+  --------------------------------
+  
+  java.io.* / java.nio.* 
+  
+  
+  
+  byte-stream
+  
+   - InputStream
+   - OutputStream
+  
+  character-stream
+  
+   - Reader
+   - Writer
+   
+ ----------------------------------------
+ 
+ 
+   source : file
+   
+   byte-stream
+   -------------
+   
+    FileInputStream
+    FileOutputStream
+    
+   character-stream
+   -----------------  
+   
+     FileReader
+     FileWriter
+     
+ -------------------------------------------------
+ 
+  
+
+
+
+IO  ( java.io, java.nio.* )
+---------------------------
+
+
+
+ 
+  sources of input/output
+  ------------------------
+  
+  - standard input/output ( keyboard / display )
+  - file
+  - n/w sockets
+  - buffer
+  
+  
+  --------------------------------
+  
+  in Java, All IO operations are 'stream' based
+  
+  2 ways
+  
+  -> 8-bit / byte-stream
+  -> 16-bit / character-stream
+  
+ 
+  -------------------------------------
+  
+   
+  IO class(s) to do IO operations
+  --------------------------------
+  
+  java.io.* / java.nio.* 
+  
+  
+  
+  byte-stream
+  
+   - InputStream
+   - OutputStream
+  
+  character-stream
+  
+   - Reader
+   - Writer
+   
+ ----------------------------------------
+ 
+ 
+   source : file
+   
+   byte-stream
+   -------------
+   
+    FileInputStream
+    FileOutputStream
+    
+   character-stream
+   -----------------  
+   
+     FileReader
+     FileWriter
+     
+ -------------------------------------------------
+ 
+  
+

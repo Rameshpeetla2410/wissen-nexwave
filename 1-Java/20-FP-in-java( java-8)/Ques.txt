@@ -1,0 +1,10 @@
+
+
+-------------------------------------------------------
+ItemsLib
+
+	 - filter(list,Predicate)  : List<Item>
+	 - map(list,Function)      : List<property>
+	 - forEach(list,Consumer)  : void
+	 
+-------------------------------------------------------	 	
