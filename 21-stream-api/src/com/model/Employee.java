@@ -1,7 +1,7 @@
 package com.model;
 
 public class Employee implements Comparable<Employee> {
-	
+
 	private String name;
 	private double salary;
 
@@ -10,7 +10,12 @@ public class Employee implements Comparable<Employee> {
 		this.name = name;
 		this.salary = salary;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", salary=" + salary + "]";
+	}
+
 	@Override
 	public int compareTo(Employee o) {
 		return this.name.compareTo(o.name);
@@ -31,21 +36,10 @@ public class Employee implements Comparable<Employee> {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	
-	public static final Employee[] SOME = {
-			new Employee("Mike", 2500),
-			new Employee("Frank", 3000),
-			new Employee("Hannah", 2500),
-			new Employee("Rajeev", 2000),
-			new Employee("Jessica", 1500),
-			new Employee("Doug", 2000),
-			new Employee("Chen", 3500),
-			new Employee("Krish", 2200),
-			new Employee("Louie", 800),
-			new Employee("Nag", 100)
-		};
 
-
-	
+	public static final Employee[] SOME = { new Employee("Mike", 2500), new Employee("Frank", 3000),
+			new Employee("Hannah", 2500), new Employee("Rajeev", 2000), new Employee("Jessica", 1500),
+			new Employee("Doug", 2000), new Employee("Chen", 3500), new Employee("Krish", 2200),
+			new Employee("Louie", 800), new Employee("Nag", 100) };
 
 }

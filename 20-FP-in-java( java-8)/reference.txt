@@ -1371,7 +1371,7 @@ takeWhile Example
 
     Example
 
-        - Assume Employee contains an Address, whicj contains a City
+        - Assume Employee contains an Address, which contains a City
 
         Objective : print names of cities where at least one employee lives
 
@@ -1380,7 +1380,7 @@ takeWhile Example
         emps.map(Employee::getAddress)
             .map(Address::getCity)
             .map(City:getName)
-            .distict()
+            .distinct()
             .forEach(System.out::println);
 
     --------------------------------------------------------------------------------------- 
@@ -1399,12 +1399,12 @@ takeWhile Example
 
     Sort Operations
 
-        - Accoring to a custom ordering
+        - According to a custom ordering
 
             Stream<T> sorted()
             Stream<T> sorted(Comparator<? super T> comp);
 
-        - Steful operations
+        - Statefull operations
 
    --------------------------------------------------------------------------------------- 
 
@@ -1417,7 +1417,7 @@ takeWhile Example
             Stream<Employee> emps=...;
 
             emps
-                .sorted(Comparator.comparingInt(Employee::getSalary.reversed())
+                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
                 .limit(10)
                 .map(Employee::getName)
                 .forEachOrdered(System.out::println)
@@ -1439,7 +1439,7 @@ takeWhile Example
 
     Example
 
-        Objective : efficiently count the number od distinct integers in a list
+        Objective : efficiently count the number odd distinct integers in a list
 
 
         List<Integer> list=....;
@@ -1447,6 +1447,7 @@ takeWhile Example
                    .unordered()
                    .distinct()
                    .count();         
+
 
     ---------------------------------------------------------------------------------------                 
 
@@ -1465,7 +1466,7 @@ takeWhile Example
     Standard Terminations for Stream<T>
 
     - forEach(),forEachOrdered(),[peek]    : void
-    - allMatch(),anyMatch(),noneMatch() : boolean
+    - allMatch(),anyMatch(),noneMatch()    : boolean
     - toArray()  : array
     - count()    : long 
     - findFirst(),findAny(),min(),max()    : T
@@ -1489,9 +1490,10 @@ takeWhile Example
 
         Stream<Integer> stream=...;
         stream.peek(System.out::println)
-              .fileter(n->n>0)
+              .filter(n->n>0)
               .distinct()
               .limit(10)
+              .peek(System.out::println)
               .forEach(System.out::println)
 
     ---------------------------------------------------------------------------------------  
@@ -1558,7 +1560,7 @@ takeWhile Example
 
     Optional class
 
-        - Functional-style alternative to rturning 'null;
+        - Functional-style alternative to returning 'null;
         - can be chained
 
             String result=stream.min(comparator).orElse('default');
@@ -1782,9 +1784,9 @@ Standard collectors
 
  static factory methods of Collectors, returning Collector
 
- To Strings      : joining()
+ To Strings              : joining()
  To standard collections : toList(), toSet(), toCollection()
- to maps                 : tomap(), groupingBy(), partitioningBy()
+ to maps                 : toMap(), groupingBy(), partitioningBy()
 
 
  ---------------------------------------------------------------------------------------
