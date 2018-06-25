@@ -17,7 +17,7 @@ import com.shop.model.Product;
 import com.shop.repoistory.JdbcProductRepository;
 import com.shop.repoistory.ProductRepository;
 
-@WebServlet(urlPatterns = { "/pm", "/save" })
+@WebServlet(urlPatterns = { "/pm", "/save", "/delete", "/edit","/update" })
 public class ProductController extends HttpServlet {
 
 	private ProductRepository productRepo;
@@ -29,15 +29,33 @@ public class ProductController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Product> products = this.productRepo.findAll();
-		req.setAttribute("products", products);
-		req.getRequestDispatcher("pm.jsp").forward(req, resp);
+
+		String reqpPth = req.getRequestURI();
+		String path = reqpPth.substring(reqpPth.lastIndexOf("/"));
+
+		if (path.equals("/pm")) {
+			List<Product> products = this.productRepo.findAll();
+			req.setAttribute("products", products);
+			req.getRequestDispatcher("pm.jsp").forward(req, resp);
+		}
+		if (path.equals("/delete")) {
+			String id = req.getParameter("id");
+			productRepo.delete(Integer.parseInt(id));
+			resp.sendRedirect("pm");
+		}
+		if (path.equals("/edit")) {
+			String id = req.getParameter("id");
+			Product product = productRepo.find(Integer.parseInt(id));
+			req.setAttribute("product", product);
+			req.getRequestDispatcher("edit_product.jsp").forward(req, resp);
+		}
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		// Input
+		String id = req.getParameter("id");
 		String name = req.getParameter("name");
 		String price = req.getParameter("price");
 		String date = req.getParameter("date");
@@ -56,7 +74,12 @@ public class ProductController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		productRepo.save(product);
+		if (id == null) {
+			productRepo.save(product);
+		} else {
+			product.setId(Integer.parseInt(id));
+			productRepo.update(product);
+		}
 
 		resp.sendRedirect("pm");
 

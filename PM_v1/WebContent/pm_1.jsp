@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <%@page import="com.shop.model.Product"%>
 <%@page import="java.util.List"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -50,7 +49,9 @@
 		</div>
 	</div>
 	<hr/>
-	
+	<%
+	List<Product> products=(List<Product>)request.getAttribute("products");
+	%>
 	<div class="card">
 		<div class="card-header">Products List</div>
 		<div class="card-body">
@@ -65,18 +66,18 @@
 						<th></th>
 					</tr>
 				</thead>
+				<% for(Product product:products) {%>
 				<tbody>
-				<c:forEach var="product" items="${products}">
 					<tr>
-						<td>${product.id}</td>
-						<td>${product.name}</td>
-						<td>&#8377;${product.price}</td>
-						<td>${product.date}</td>
-						<td><a href="edit?id=${product.id}">edit</a></td>
-						<td><a href="delete?id=${product.id}">delete</a></td>
+						<td><%=product.getId() %></td>
+						<td><%=product.getName() %></td>
+						<td><%=product.getPrice() %></td>
+						<td><%=product.getDate() %></td>
+						<td><a href>edit</a></td>
+						<td><a href>delete</a></td>
 					</tr>
-				</c:forEach>
 				</tbody>
+				<%} %>
 			</table>
 		</div>
 	</div>

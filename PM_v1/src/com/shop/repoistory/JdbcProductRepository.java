@@ -84,17 +84,93 @@ public class JdbcProductRepository implements ProductRepository {
 
 	@Override
 	public Product find(int id) {
-		return null;
+		//
+		List<Product> products = new ArrayList<>();
+		Connection connection = null;
+		try {
+			connection = ConnectionFactory.getConnection();
+			String sql = "select * from shop_db.PRODUCTS where id=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product product = new Product();
+				product.setId(rs.getInt(1));
+				product.setName(rs.getString(2));
+				product.setPrice(rs.getDouble(3));
+				product.setDate(rs.getDate(4));
+				product.setImage(rs.getString(5));
+				product.setDescription(rs.getString(6));
+				products.add(product);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return products.get(0);
+
 	}
 
 	@Override
 	public void update(Product product) {
-		// ..
+		Connection connection = null;
+		try {
+			connection = ConnectionFactory.getConnection();
+			String sql = "update shop_db.PRODUCTS set name=?,price=?,makeDate=?,image=?,description=? where id=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, product.getName());
+			ps.setDouble(2, product.getPrice());
+			ps.setDate(3, new Date(product.getDate().getTime()));
+			ps.setString(4, product.getImage());
+			ps.setString(5, product.getDescription());
+			ps.setInt(6, product.getId());
+			int r = ps.executeUpdate();
+			if (r == 1)
+				System.out.println("New product saved ");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
 	}
 
 	@Override
 	public void delete(int id) {
-		// --
+		Connection connection = null;
+		try {
+			connection = ConnectionFactory.getConnection();
+			String sql = "delete from shop_db.PRODUCTS where id=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			int r = ps.executeUpdate();
+			if (r == 1)
+				System.out.println(" product deleted ");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
 	}
 
 }
