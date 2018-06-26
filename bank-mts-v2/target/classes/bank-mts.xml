@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+<!-- 	<import resource="./bank-infra.xml"/> -->
+	
 	<bean id="accountRepository"
-		class="com.bank.mts.repository.JdbcAccountRepository">
+		  class="com.bank.mts.repository.JdbcAccountRepository" 
+		  scope="singleton"
+		  c:dataSource-ref="dataSource"
+		  >
+<!-- 		<constructor-arg ref="dataSource"/> -->
 	</bean>
-	<bean id="txrService" class="com.bank.mts.service.TxrServiceImpl">
-		<property name="accountRepository" ref="accountRepository" />
+	
+	<bean id="txrService" 
+	      class="com.bank.mts.service.TxrServiceImpl"
+	      init-method="init" 
+	      destroy-method="destroy" 
+	      scope="singleton" 
+	      p:accountRepository-ref="accountRepository">
+<!-- 		<property name="accountRepository" ref="accountRepository" /> -->
 	</bean>
+	
+	
+	
+	<bean class="com.bank.mts.spring.BPP"/>
 
 </beans>

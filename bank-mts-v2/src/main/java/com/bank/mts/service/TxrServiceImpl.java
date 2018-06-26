@@ -20,6 +20,13 @@ public class TxrServiceImpl implements TxrService {
 		logger.info("AccountRepository instance injected to TxrService instance");
 	}
 
+	public void init() {
+		logger.info("TxrService :: init()");
+	}
+	public void destroy() {
+		logger.info("TxrService :: destroy()");
+	}
+
 	public void txr(double amount, String fromAccNum, String toAccNum) {
 		logger.info("txr-initiated");
 		try {

@@ -20,7 +20,7 @@ public class App {
 		// txrService.setAccountRepository(accountRepository);
 
 		ConfigurableApplicationContext context = null; // container
-		context = new ClassPathXmlApplicationContext("bank-mts.xml");
+		context = new ClassPathXmlApplicationContext(new String[]{"bank-mts.xml","bank-infra.xml"});
 		// -----------------------------------------
 
 		System.out.println("-----------------------------------------");
@@ -29,6 +29,7 @@ public class App {
 		// -----------------------------------------
 		TxrService txrService = context.getBean("txrService", TxrService.class);
 		txrService.txr(300.00, "1", "2");
+		
 		// -----------------------------------------
 
 		System.out.println("-----------------------------------------");
