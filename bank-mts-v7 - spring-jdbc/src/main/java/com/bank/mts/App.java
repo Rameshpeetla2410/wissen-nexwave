@@ -19,7 +19,7 @@ public class App {
 		// use phase
 		// -----------------------------------------
 		TxrService txrService = context.getBean("txrService", TxrService.class);
-		txrService.txr(300.00, "1", "2");
+		txrService.txr(600.00, "2", "1");
 		System.out.println("txr-success");
 		// -----------------------------------------
 

@@ -1,13 +1,10 @@
 package com.bank.mts.repository;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
 import com.bank.mts.model.Account;
 import com.bank.mts.model.AccountType;

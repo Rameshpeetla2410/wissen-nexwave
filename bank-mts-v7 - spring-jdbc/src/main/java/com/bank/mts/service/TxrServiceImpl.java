@@ -1,5 +1,7 @@
 package com.bank.mts.service;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.bank.mts.model.Account;
 import com.bank.mts.repository.AccountRepository;
 
@@ -14,6 +16,7 @@ public class TxrServiceImpl implements TxrService {
 		this.accountRepository = accountRepository;
 	}
 
+	@Transactional
 	public void txr(double amount, String fromAccNum, String toAccNum) {
 		try {
 
@@ -24,10 +27,14 @@ public class TxrServiceImpl implements TxrService {
 			toAccount.setBalance(toAccount.getBalance() + amount);
 
 			accountRepository.update(fromAccount);
+			boolean b = true;
+			if (b)
+				throw new RuntimeException();
 			accountRepository.update(toAccount);
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
 	}
 
