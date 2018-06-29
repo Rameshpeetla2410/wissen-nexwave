@@ -1,0 +1,46 @@
+
+
+
+  Spring MVC - features 
+  -------------------------
+ 
+ -------------------------------------------------------------- 
+  
+  How to map URL to controller ( handler )?
+  
+    many ways
+    
+    -> based on URL-path
+    -> based on http-method
+    -> based on presence/absence of params
+    -> based on presence/absence of headers
+
+ --------------------------------------------------------------  
+  
+  
+  possible arguments in RequestMapping methods
+  
+  
+  - @RequestParam
+  - @PathVariable
+  - @Cookievalue
+  - HttpServletRequest
+  - HttpServletResponse
+  - HttpSession
+  
+  - Locale
+  - @RequestHeader
+  - Principal
+  
+  - @ModelAttribute
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
