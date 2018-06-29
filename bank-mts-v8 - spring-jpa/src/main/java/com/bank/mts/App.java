@@ -1,5 +1,6 @@
 package com.bank.mts;
 
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,7 +13,7 @@ public class App {
 
 		// Init phase
 		// -----------------------------------------
-		ConfigurableApplicationContext context = null; // container
+		ConfigurableApplicationContext context = null; 
 		context = new AnnotationConfigApplicationContext(Bank_mts.class);
 		// -----------------------------------------
 
@@ -20,10 +21,10 @@ public class App {
 		// -----------------------------------------
 		try {
 			TxrService txrService = context.getBean("txrService", TxrService.class);
-			txrService.txr(1000.00, "1", "2");
-			System.out.println("txr-success");
+			txrService.txr(1000.00, "2", "1");
+			System.out.println("Txr-success..");
 		} catch (Exception e) {
-			System.out.println("Txr Failed..");
+			System.out.println("Txr-Failed..");
 		}
 		// -----------------------------------------
 
@@ -31,6 +32,7 @@ public class App {
 		// -----------------------------------------
 		context.close();
 		// -----------------------------------------
+		
 
 	}
 

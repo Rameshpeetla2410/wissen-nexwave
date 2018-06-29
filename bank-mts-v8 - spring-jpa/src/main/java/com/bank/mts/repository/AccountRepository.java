@@ -6,6 +6,6 @@ public interface AccountRepository {
 
 	Account load(String num);
 
-	void update(Account account);
+	Account update(Account account);
 
 }

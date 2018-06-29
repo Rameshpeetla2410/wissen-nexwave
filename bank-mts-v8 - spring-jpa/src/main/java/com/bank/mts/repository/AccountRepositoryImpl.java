@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import com.bank.mts.model.Account;
 
-public class JpaAccountRepository implements AccountRepository {
+public class AccountRepositoryImpl implements AccountRepository {
 
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -16,8 +16,8 @@ public class JpaAccountRepository implements AccountRepository {
 	}
 
 	@Override
-	public void update(Account account) {
-		entityManager.merge(account);
+	public Account update(Account account) {
+		return entityManager.merge(account);
 	}
 
 }
