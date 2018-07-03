@@ -23,7 +23,15 @@
 
     imp-point
     
-                => every .js-runtime by default has one global-scope
+                => every .js-runtime by default has one global-scope  & global-object
+
+                => global-scope always executed by global-object
+
+                   global-object
+
+                    browser-envi ==> window
+                    Node.js      ==> process
+                    
 
                 => every function invocation also creates new-scope,
                    which is child of in-which scope that function declared/created
