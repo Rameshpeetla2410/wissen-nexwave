@@ -391,6 +391,11 @@ let p = new Person('Ria', 3);
 
 
 
+let o={
+  a:10,
+  b:20,
+}
+
 
 
 
