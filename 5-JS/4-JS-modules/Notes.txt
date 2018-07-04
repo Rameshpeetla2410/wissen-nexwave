@@ -1,0 +1,86 @@
+
+
+-------------------------------------------------------------
+
+.js-developement, without module-standards & module-loader
+
+  problems:
+
+        => global-scope naming collisions
+            ->soln: self-executable function pattern
+        => loading dependency modules in-order is difficult  
+
+ -------------------------------------------------------------       
+
+
+
+from third-parties, we got some js-module-standards & loaders
+
+
+   a. AMD (  Asynchronous Module Definition (AMD)  ) spec
+
+        - define()  ==> define new module
+        - require() ==> to load module
+
+        loader(s) : e.g Require.js 
+
+   b. UMD
+
+        loader(s) : System.js
+
+       .....................
+
+   b. commonJS
+
+ 
+
+--------------------------------------------------------------------        
+
+commonJS - js-module-standards
+------------------------------
+
+ - every .js file is module by default
+ - all variables & functions in .js file are private by default
+ - to abstract/export any meber to other module , use 'module.exports' object
+ - to require/import any module , use 'require()' function
+ - we cqan group grelated modules into package with description file ( package.json)
+
+
+ imp-note : Node.js runtime already implemented this standard as default module-standard
+
+
+
+ ------------------------------------------------------------------------
+
+
+
+ NPM ( Node Package Manager )
+ ----------------------------
+
+    - cli tool , runs on Node.js
+
+
+    why we need ?
+
+        => to export/install js-package(s) to/from NPM-repository
+
+
+----------------------------------------------------------------- ----
+
+
+
+ECMAScript module-standard  ( from ES6 )   ==> ES Modules
+----------------------------------------------------------
+
+
+ - every .js file is module by default
+ - all variables & functions in .js file are private by default
+ - to abstract/export any meber to other module , use 'export' keyword
+ - to require/import any module , use import' keyword
+ - we cqan group grelated modules into package with description file ( package.json)
+
+
+
+
+
+

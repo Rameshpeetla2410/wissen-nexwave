@@ -1,0 +1,24 @@
+
+
+
+
+    .js-lang
+
+
+            => all IO operations are non-blocking
+            => single-threaded process , but we can execute concurrent actions
+
+        --------------------------------------------------------
+
+        browser e.g chrome
+
+            1. Javascript runtime/engine    : ECMAScript spec
+                - single-call-stack  ==> to execute context/scope
+                - heap               ==> to keep objects
+            2. web-apis ( e.g DOM, XHR, Timer  ) : w3c reccommendations
+            3. Event/Message/callback-queue   
+            4. Event-Loop
+
+        -------------------------------------------------------------
+        ref : https://developer.mozilla.org/bm/docs/Web/JavaScript/EventLoop
+        ref : http://latentflip.com/loupe

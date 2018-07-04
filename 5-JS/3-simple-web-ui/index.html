@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>web-ui</title>
     <link href="./css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
 </head>
 
 <body class="container">
@@ -14,6 +15,29 @@
     <hr/>
     <h1>simple-web-ui</h1>
     <hr/>
+    <button class="btn btn-dark" id="form-btn">
+        <i class="fa fa-plus"></i>
+    </button>
+    <div class="col-sm-6 col-md-6">
+        <div class="card">
+            <div class="card-header">simple-form</div>
+            <div class="card-body">
+                <form id="my-form">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input id="nameField" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id="emailField" class="form-control" />
+                        <span id="emailMessage" style="color: red"></span>
+                    </div>
+                    <button class="btn btn-warning">submit</button>
+                    <button type="button" id="cancel-btn" class="btn btn-danger">cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <hr/>
     <button class="btn btn-dark" id="load-todos-btn"> Load Todos</button>
@@ -31,7 +55,9 @@
     <hr/>
     <img class="img-fluid" id="pov" src="./images/1.jpg" />
 
-    <script src="./app.js"></script>
+    <script src="./jquery-3.3.1.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <script src="./app_v2.js"></script>
 
 </body>
 
