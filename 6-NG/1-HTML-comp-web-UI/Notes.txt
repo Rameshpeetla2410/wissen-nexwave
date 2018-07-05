@@ -1,0 +1,74 @@
+
+
+
+HTML component/element/tag
+---------------------------
+
+
+=> every html-tag/element/component
+   is an instance of HTMLXXXElement class
+
+
+
+ e.g
+
+ <div></div>  instanceof 'HTMLDivElement' class
+
+ i.e
+
+  HTMLDivElement      ==> component-class
+  <div></div>         ==> component
+
+
+html-component
+--------------
+
+- props    ==> input/data given by parent-component 
+
+
+-----------------------------------------------------------
+
+
+
+-------------------------------------------
+
+2 types of HTML-components
+
+    - stateless
+    - stateful
+
+-------------------------------------------
+
+ e.g input-element   ==> statefull component
+
+         state : i.e 'value'
+
+ imp-note : when component's state changes,always will 're-render' 
+
+
+
+
+-------------------------------------------
+
+imp-point
+
+b/w components, data flows uni-directionaly
+
+-------------------------------------------
+
+
+---------------------------------------------------------------
+imp-points
+---------------------------------------------------------------
+
+component  ==> small-ui-fragment
+
+==> every component must follow single responsibility principle (SRP)
+==> every component must be individual
+==> component can have 1 or more properties
+==> components by default stateless, but we can make statefull
+==> when component's state changes, always it will re-render
+==> parent-component communicate with children by properties
+    and
+    child-communicate with parent by events
+---------------------------------------------------------------    

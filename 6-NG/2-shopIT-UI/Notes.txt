@@ -1,0 +1,44 @@
+
+
+
+NG-topics
+---------
+
+------------------------------------------------------------------
+   A. data-binding
+------------------------------------------------------------------
+
+     types:
+
+     1. interpolation
+
+        syntax: in template,   {{expression}}
+
+        ==> component-class ---> component-template
+
+     2. property binding
+
+        syntax: <component [propName]="expression"/>    
+
+        ==> component-class ---> component's properties
+
+     3. Event binding 
+
+        syntax <component (event-name)="handler($event)"/>
+
+        ==> component-template  ---> component-class
+
+  ------------------------------------------------------------------      
+   B. directives
+  ------------------------------------------------------------------
+
+     types:
+
+     1. component    ==> directive + template  ( New UI fragment) 
+     2. structural   ==> to change component's template
+        e.g   *ngIf, *ngFor
+     3. attribute   
+         e.g ngClass
+
+
+
