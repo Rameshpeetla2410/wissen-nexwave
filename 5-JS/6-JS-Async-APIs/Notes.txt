@@ -1,0 +1,19 @@
+
+
+
+by default,
+
+  after event, event-handler(callbacks) always execute async
+
+ ----------------------------------------------------------------
+
+
+
+ javascript Async-APIs
+ -------------------------
+
+   1 - Promise API ( es6 )  
+
+   2. RxJS ( Reactive eXtensions for JavaScript ) 
+
+    
