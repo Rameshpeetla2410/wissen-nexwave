@@ -6,7 +6,7 @@
       <span class="badge badge-dark">{{idx+1}}</span>
       <h5>{{product.name|uppercase}} - <small>{{product.makeDate|date:'yyyy'}}</small></h5>
       <h6>{{product.price|priceDiscount:product.discount|currency:product.currencyCode:'symbol'}}</h6>
-      <button (click)="handleBuy($event)" *ngIf="product.canBuy" class="btn btn-primary btn-sm">buy</button>
+      <button (click)="handleBuy($event)" *ngIf="true" class="btn btn-primary btn-sm">buy</button>
       <hr/>
       <ul class="nav nav-tabs">
           <li class="nav-item">
