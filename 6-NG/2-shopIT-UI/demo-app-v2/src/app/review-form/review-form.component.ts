@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-review-form',
@@ -7,9 +9,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewFormComponent implements OnInit {
 
-  constructor() { }
+  isFormOpen: boolean = false;
+  reviewForm: FormGroup;
+  errors: any = {};
+  @Output() review = new EventEmitter();
+
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.reviewForm = this.fb.group({
+      stars: ['5', [Validators.required]],
+      author: ['', [Validators.required, Validators.email]],
+      body: ['', [Validators.required, Validators.minLength(5)]]
+    });
+
+    let authorControl = this.reviewForm.get('author')
+    authorControl.statusChanges
+      .pipe(debounceTime(200
+        0))
+      .subscribe(e => {
+        if (e === 'INVALID') {
+          let errors = authorControl.errors;
+          if (errors.required) { this.errors['email'] = 'Email is Required' }
+          if (errors.email) { this.errors['email'] = 'Invalid Email' }
+        } else {
+          this.errors['email'] = '';
+        }
+      })
+  }
+
+  toggleForm() {
+    this.isFormOpen = !this.isFormOpen;
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    if (this.reviewForm.valid) {
+      let review = this.reviewForm.value;
+      this.review.emit({ value: review });
+      this.toggleForm();
+    }
   }
 
 }

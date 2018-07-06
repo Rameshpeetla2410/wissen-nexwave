@@ -11,7 +11,7 @@ export class ProductComponent implements OnInit {
   @Input() idx: number = 0;
   @Input() product: any;
   currentTab: number = 1;
-  
+
 
   reviews: Array<any> = [
     { stars: 5, author: 'who@email.com', body: 'sample-review-1' },
@@ -29,6 +29,10 @@ export class ProductComponent implements OnInit {
   }
   isTabSelected(tabIdx) {
     return this.currentTab === tabIdx;
+  }
+
+  addNewReview(event) {
+    this.reviews.push(event.value)
   }
 
 }

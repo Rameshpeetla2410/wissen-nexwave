@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="col-8 col-sm-6 col-md-6">
+    <div class="card">
+      <div class="card-header">Employee Form</div>
+      <div class="card-body">
+        
+        <form #employeeForm="ngForm" (submit)="handleFormSubmit($event,employeeForm)">
+          <div class="form-group">
+            <label>FirstName</label>
+            <input class="form-control"
+                   [ngClass]="{'is-invalid':firstNameVar.invalid && firstNameVar.touched}" 
+                   [(ngModel)]="employee.firstName"
+                   name="firstName"
+                   required
+                   minlength="3"
+                   autofocus
+                   #firstNameVar="ngModel"
+                   />
+            <div class="help-block" *ngIf="firstNameVar.invalid && firstNameVar.touched">
+              <span *ngIf="firstNameVar.errors?.required">FirstName is Required</span>
+              <span *ngIf="firstNameVar.errors?.minlength">FirstName must be min 3 char</span>
+            </div>       
+          </div>
+          <div class="form-group">
+            <label>LastName</label>
+            <input class="form-control" 
+                   [(ngModel)]="employee.lastName"
+                   name="lastName"
+                   required
+                   #lastNameVar="ngModel"
+                   />
+          </div>
+          <button class="btn btn-primary" type="button" (click)="loadEmployee()">Load</button>&nbsp;
+          <button class="btn btn-primary">Save</button>
+        </form>
+        <hr/>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<hr/>
+data-model
+<hr/>
+{{employee|json}}
+
+<hr/>
+form-model
+<hr/>
+
+{{employeeForm.value|json}}
+
+<hr/>
+FormControl e.g lastName
+<hr/>
+<pre>
+    is pristine : {{lastNameVar.pristine}}
+    is dirty    : {{lastNameVar.dirty}}
+    is invalid  : {{lastNameVar.invalid}}
+    is valid    : {{lastNameVar.valid}}
+    is untouched: {{lastNameVar.untouched}}
+    is touched  : {{lastNameVar.touched}}
+</pre>
+
+<hr/>
+FormGroup e.g employeeForm
+<hr/>
+<pre>
+    is pristine : {{employeeForm.pristine}}
+    is dirty    : {{employeeForm.dirty}}
+    is invalid  : {{employeeForm.invalid}}
+    is valid    : {{employeeForm.valid}}
+    is untouched: {{employeeForm.untouched}}
+    is touched  : {{employeeForm.touched}}
+    is submitted: {{employeeForm.submitted}}
+</pre>
+

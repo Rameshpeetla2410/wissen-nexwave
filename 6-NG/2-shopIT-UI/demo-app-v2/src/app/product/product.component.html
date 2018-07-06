@@ -36,7 +36,7 @@
                       [review]="review">
           </app-review>
           <hr/>
-          <app-review-form></app-review-form>
+          <app-review-form (review)="addNewReview($event)"></app-review-form>
       </div>
   </div>
 </div>
