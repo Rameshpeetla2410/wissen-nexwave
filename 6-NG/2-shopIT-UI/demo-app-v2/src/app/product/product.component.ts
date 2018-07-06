@@ -11,6 +11,13 @@ export class ProductComponent implements OnInit {
   @Input() idx: number = 0;
   @Input() product: any;
   currentTab: number = 1;
+  
+
+  reviews: Array<any> = [
+    { stars: 5, author: 'who@email.com', body: 'sample-review-1' },
+    { stars: 3, author: 'who@email.com', body: 'sample-review-2' }
+  ];
+
 
   constructor() { }
 
