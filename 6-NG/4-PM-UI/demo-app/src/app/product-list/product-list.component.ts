@@ -17,4 +17,11 @@ export class ProductListComponent implements OnInit {
       .subscribe(products => this.products = products)
   }
 
+  delete(id) {
+    this.productsService.delete(id)
+      .subscribe(resp => {
+        this.products = this.products.filter(item => item.id !== id)
+      })
+  }
+
 }

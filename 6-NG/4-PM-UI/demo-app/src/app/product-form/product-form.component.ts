@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProductsService } from '../products.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-form',
@@ -11,12 +11,15 @@ import { Router } from '@angular/router';
 export class ProductFormComponent implements OnInit {
 
   productForm: FormGroup;
+  isEditing: boolean = false;
+  originalProduct: any;
 
   constructor(
-              private fb: FormBuilder, 
-              private productsService: ProductsService,
-              private router:Router
-            ) { }
+    private fb: FormBuilder,
+    private productsService: ProductsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     this.productForm = this.fb.group({
@@ -25,10 +28,31 @@ export class ProductFormComponent implements OnInit {
       makeDate: [''],
       description: []
     });
+
+    this.route.params.subscribe(e => {
+      if (e !== null) {
+        this.productsService.loadProduct(e.prodId)
+          .subscribe(product => {
+            this.originalProduct = product;
+            this.productForm.patchValue(product)
+            this.isEditing = true;
+          })
+      }
+    })
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    if (this.isEditing) {
+      let formData = this.productForm.value;
+      let product = Object.assign({}, this.originalProduct, formData)
+      this.productsService.update(product)
+        .subscribe(product => {
+          this.router.navigate(['products'])
+        })
+      return;
+    }
     this.productsService.save(this.productForm.value)
       .subscribe(product => {
         this.router.navigate(['products'])
