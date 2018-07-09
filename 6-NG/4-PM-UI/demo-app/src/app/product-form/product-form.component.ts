@@ -29,8 +29,20 @@ export class ProductFormComponent implements OnInit {
       description: []
     });
 
+    //way-1
+    // let prodId = this.route.snapshot.params['prodId'];
+    // if (prodId) {
+    //   this.productsService.loadProduct(prodId)
+    //     .subscribe(product => {
+    //       this.originalProduct = product;
+    //       this.productForm.patchValue(product)
+    //       this.isEditing = true;
+    //     })
+    // };
+
+    //way-2
     this.route.params.subscribe(e => {
-      if (e !== null) {
+      if (e.prodId) {
         this.productsService.loadProduct(e.prodId)
           .subscribe(product => {
             this.originalProduct = product;
@@ -38,7 +50,7 @@ export class ProductFormComponent implements OnInit {
             this.isEditing = true;
           })
       }
-    })
+    });
 
   }
 
@@ -50,6 +62,7 @@ export class ProductFormComponent implements OnInit {
       this.productsService.update(product)
         .subscribe(product => {
           this.router.navigate(['products'])
+          this.isEditing = false;
         })
       return;
     }

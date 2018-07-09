@@ -1,4 +1,9 @@
-<div class="card">
+
+<div *ngIf="products.length===0">
+  No Products
+</div>
+
+<div class="card" *ngIf="products.length!==0">
   <div class="card-header">Product List</div>
   <div class="card-body">
 
@@ -15,9 +20,9 @@
       <tbody>
         <tr *ngFor="let product of products">
           <!-- <td>{{product.id}}</td> -->
-          <td>{{product.name}}</td>
+          <td><a [routerLink]="['view',product.id]">{{product.name}}</a></td>
           <td>{{product.price|currency:'INR'}}</td>
-          <td><a [routerLink]="['/products/edit',product.id]"><i class="fa fa-edit"></i></a></td>
+          <td><a [routerLink]="['edit',product.id]"><i class="fa fa-edit"></i></a></td>
           <td><a (click)="delete(product.id)"><i class="fa fa-trash"></i></a></td>
         </tr>
       </tbody>
@@ -25,3 +30,5 @@
 
   </div>
 </div>
+<hr/>
+<router-outlet name="primary"></router-outlet>
