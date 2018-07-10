@@ -1,0 +1,36 @@
+<div class="container">
+  <hr/>
+  <h1>NG - advanced concepts :</h1>
+  <hr/>
+  <button (click)="greet('good morning')">GM</button>
+  <button (click)="greet('good noon')">GN</button>
+  <button (click)="greet('good evening')">GE</button>
+  <button (click)="greet('')">Remove</button>
+  <hr/>
+  <!-- <div class="alert alert-info">
+    {{message}}
+  </div> -->
+  <app-greeting *ngIf="message" [message]="message"></app-greeting>
+  <hr/>
+
+  <button (click)="processWithinAngularZone()" 
+          class="btn btn-primary">
+          progress-bar ( in zone )
+  </button>
+  <span class="btn btn-danger">{{progress1}}</span>
+
+  <hr/>
+
+  <button (click)="processOutsideAngularZone()" 
+          class="btn btn-primary">progress-bar ( out zone )
+  </button>
+  <span class="btn btn-danger">{{progress2}}</span>
+  <hr/>
+  <h1><app-cart-badge [cartStream]="cartStream"></app-cart-badge></h1>
+  <hr/>
+  <button (click)="applyDiscount(100)">apply coupon</button> - {{product.price}}
+  <hr/>
+  <app-product [product]="product" [cartStream]="cartStream"></app-product>
+
+
+</div>
