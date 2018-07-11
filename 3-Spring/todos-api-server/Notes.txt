@@ -1,0 +1,79 @@
+
+
+
+back-end application
+-------------------------
+
+	Model
+	
+		- Todo
+		- User
+		
+    Layer(s)
+    
+    	- data/repository 
+    	- service layer
+    	- web-layer  ( REST )
+    	
+    	
+-------------------------------------    			
+
+REST - API
+-------------
+
+
+	resource(s)
+	
+		- Todo
+		- User
+		
+   1. Resource identification in requests
+   
+   		/todos
+   		/todos/{id}
+   		/users
+   		/users/{id}
+   		/users/{id}/todos
+   		/users/{id}/todos/{id}
+   			
+   			
+   2. Resource manipulation through representations
+   
+
+   		representation(s)
+   		
+   			- html,XML,JSON,csv
+   
+   
+   		GET    /todos
+   		GET    /todos/{id}
+   		POST   /todos
+   		PUT    /todos/{id}
+   		DELETE /todos/{id}
+   		
+   3. Self-descriptive messages
+   
+   
+   		request ===>
+   		
+   		Content-Type :
+   		Accept       :
+   		
+   		<===== response
+   		
+   		Content-Type :
+   		
+   4. Hypermedia as the engine of application state (HATEOAS)
+   
+   
+   ---------------------------------------------------------------		 
+   		
+   								
+   
+   		
+
+
+
+
+
+

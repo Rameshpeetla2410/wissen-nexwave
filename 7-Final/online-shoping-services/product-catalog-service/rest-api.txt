@@ -1,0 +1,24 @@
+
+------------------------------------------------------
+
+Ref : http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+
+------------------------------------------------------
+   // resource(s)
+  
+   	  - product
+ ------------------------------------------------------ 
+  
+  design REST-api
+  
+  1. Resource identification in requests
+  
+  	 	  /products
+  	 	  /products/{id}
+  	 	  /products?name=
+  	 	  /products?catagory=
+   	  
+   	  
+   
+   
+   		
