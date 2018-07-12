@@ -1,0 +1,33 @@
+
+
+<button class="btn btn-primary" 
+(click)="getTopTxns(10)"> Txns</button>
+
+<hr/>
+    From : <p-calendar></p-calendar>
+    To : <p-calendar></p-calendar>
+    <button class="btn btn-primary"> As PDF </button> &nbsp;
+    <button class="btn btn-primary"> As XLS </button> &nbsp;
+    <button class="btn btn-primary"> Print in screen </button> &nbsp;
+<hr/>
+
+<p-table [value]="txns">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Closing Balance</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-txn>
+            <tr>
+                <td>{{txn.id}}</td>
+                <td>{{txn.date|date}}</td>
+                <td>{{txn.amount|currency:'INR'}}</td>
+                <td>{{txn.type}}</td>
+                <td>{{txn.closing_balance|currency:'INR'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>

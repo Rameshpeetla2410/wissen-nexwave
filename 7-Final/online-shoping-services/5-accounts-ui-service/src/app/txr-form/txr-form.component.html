@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-5 col-sm-5 col-md-5">
+    <app-txr-status *ngIf="status" [status]="status"></app-txr-status>
+    <div class="card" *ngIf="!status">
+      <div class="card-header">Txr Form</div>
+      <div class="card-body">
+        <form [formGroup]="txrForm" (submit)="handleSubmit($event)">
+          <div class="form-group">
+            <label>From</label>
+            <select class="form-control" 
+                    formControlName="fromAccNum">
+              <option>1</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>To</label>
+            <!-- <select class="form-control">
+                <option *ngFor="let acc of beneficiaries" [value]="acc">{{acc}}</option>
+            </select> -->
+            <p-dropdown [options]="beneficiaries" 
+                        formControlName="toAccNum">
+            </p-dropdown>
+          </div>
+          <div class="form-group">
+            <label>Amount</label>
+            <input type="number" class="form-control" formControlName="amount"/>
+          </div>
+          <button>Txr</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
