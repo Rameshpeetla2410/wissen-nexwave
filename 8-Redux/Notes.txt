@@ -1,0 +1,15 @@
+
+-------------------------------------------
+e.g   counter-ui
+-------------------------------------------
+  state   : count
+  actions : INCREMENT,DECREMENT
+
+-------------------------------------------
+
+e.g shop-ui
+-------------------------------------------
+  state : products,reviews,cart,user-account
+  actions(s) : LOAD_PRODUCTS,LOAD_REVIEWS,BUY,NEW_REVIEW,..
+
+-------------------------------------------    

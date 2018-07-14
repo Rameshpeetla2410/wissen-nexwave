@@ -1,0 +1,10 @@
+<div class="container">
+  <hr/>
+  <h1>Angular + Redux - NgRx</h1>
+  <hr/>
+
+  <app-number-button number="10" (hit)="incrementTotalCount($event)"></app-number-button>
+  <app-number-button number="-10" (hit)="incrementTotalCount($event)"></app-number-button>
+  <app-display [value]="totalCount"></app-display>
+
+</div>
